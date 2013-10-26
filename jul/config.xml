@@ -12,7 +12,7 @@
    <feature name="http://api.phonegap.com/1.0/notification"/>
    
    <plugin name="Camera" value="org.apache.cordova.CameraLauncher" />
-   <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+   
 
    
    <preference name="target-device" value="universal" />
@@ -27,4 +27,6 @@
    <gap:splash src="img/inicio.png" gap:platform="android" gap:density="ldpi" />
    <gap:splash src="simg/inicio.png" gap:platform="android" gap:density="mdpi" />
    <gap:splash src="img/inicio.png" gap:platform="android" gap:density="hdpi" />
+   
+   <feature name="http://api.phonegap.com/1.0/camera"/>
 </widget>

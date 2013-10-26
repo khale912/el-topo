@@ -1,104 +1,65 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
   <head>
-    <title>Capture Photo</title>
-
-    <script type="text/javascript" charset="utf-8" src="cordova-2.5.0.js"></script>
+    <title>Example 11-2</title>
+    <meta charset="utf-8">
+    <meta name="viewport" id="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=no;" />
+    <script type="text/javascript" charset="utf-8" src="phonegap.js"></script>
     <script type="text/javascript" charset="utf-8">
+      function onBodyLoad() {
+        alert("onBodyLoad");
+        document.addEventListener("deviceready", onDeviceReady, false);
+      }
 
-    var pictureSource;   // picture source
-    var destinationType; // sets the format of returned value 
+      function onDeviceReady() {
+        navigator.notification.alert("onDeviceReady");
+      }
 
-    // Wait for Cordova to connect with the device
-    //
-    document.addEventListener("deviceready",onDeviceReady,false);
+      function takePhoto() {
+        //alert("takePhoto");
+        navigator.camera.getPicture(onCameraSuccess, onCameraError, {
+          quality : 50,
+          destinationType : Camera.DestinationType.FILE_URI
+        });
+        // navigator.camera.getPicture(onCameraSuccess, onCameraError);
+      }
 
-    // Cordova is ready to be used!
-    //
-    function onDeviceReady() {
-        pictureSource=navigator.camera.PictureSourceType;
-        destinationType=navigator.camera.DestinationType;
-    }
+      function onCameraSuccess(imageURL) {
+        navigator.notification.alert("onCameraSuccess: " + imageURL);
+        //Get a handle to the image container div
+        ic = document.getElementById('imageContainer');
+        //Then write an image tag out to the div using the
+        //URL we received from the camera application. 
+        ic.innerHTML = '<img src="' + imageURL + '" width="100%" />';
+      }
 
-    // Called when a photo is successfully retrieved
-    //
-    function onPhotoDataSuccess(imageData) {
-      // Uncomment to view the base64 encoded image data
-      // console.log(imageData);
-
-      // Get image handle
-      //
-      var smallImage = document.getElementById('smallImage');
-
-      // Unhide image elements
-      //
-      smallImage.style.display = 'block';
-
-      // Show the captured photo
-      // The inline CSS rules are used to resize the image
-      //
-      smallImage.src = "data:image/jpeg;base64," + imageData;
-    }
-
-    // Called when a photo is successfully retrieved
-    //
-    function onPhotoURISuccess(imageURI) {
-      // Uncomment to view the image file URI 
-      // console.log(imageURI);
-
-      // Get image handle
-      //
-      var largeImage = document.getElementById('largeImage');
-
-      // Unhide image elements
-      //
-      largeImage.style.display = 'block';
-
-      // Show the captured photo
-      // The inline CSS rules are used to resize the image
-      //
-      largeImage.src = imageURI;
-    }
-
-    // A button will call this function
-    //
-    function capturePhoto() {
-      // Take picture using device camera and retrieve image as base64-encoded string
-      navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 50,
-        destinationType: destinationType.DATA_URL });
-    }
-
-    // A button will call this function
-    //
-    function capturePhotoEdit() {
-      // Take picture using device camera, allow edit, and retrieve image as base64-encoded string  
-      navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 20, allowEdit: true,
-        destinationType: destinationType.DATA_URL });
-    }
-
-    // A button will call this function
-    //
-    function getPhoto(source) {
-      // Retrieve image file location from specified source
-      navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 50, 
-        destinationType: destinationType.FILE_URI,
-        sourceType: source });
-    }
-
-    // Called if something bad happens.
-    // 
-    function onFail(message) {
-      alert('Failed because: ' + message);
-    }
-
+      function onCameraError(e) {
+        console.log(e);
+        navigator.notification.alert("onCameraError: " + e);
+      }
     </script>
+        <style type="text/css">
+        body{
+        background-color: #333;
+        color: #ccc;
+        font-family: Verdana, Arial, Sans-serif;
+        font-size: 1.2 em;
+        }
+        h1{
+        text-align: center;
+        }
+        p{
+        text-align: center;
+        }
+        </style>
   </head>
-  <body>
-    <button onclick="capturePhoto();">Capture Photo</button> <br>
-    <button onclick="capturePhotoEdit();">Capture Editable Photo</button> <br>
-    <button onclick="getPhoto(pictureSource.PHOTOLIBRARY);">From Photo Library</button><br>
-    <button onclick="getPhoto(pictureSource.SAVEDPHOTOALBUM);">From Photo Album</button><br>
-    <img style="display:none;width:60px;height:60px;" id="smallImage" src="" />
-    <img style="display:none;" id="largeImage" src="" />
+  <body onload="onBodyLoad()">
+    <h1>Llamando a la cámara.</h1>
+    <p>
+      Uso de la API de Cámara de PhoneGap
+      <br />
+      <input type="button" value="Toma una foto" onclick="takePhoto();">
+      <div id="imageContainer"></div>
+    </p>
   </body>
 </html>
