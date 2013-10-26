@@ -11,6 +11,10 @@
    <feature name="http://api.phonegap.com/1.0/file"/>
    <feature name="http://api.phonegap.com/1.0/notification"/>
    
+   <plugin name="Camera" value="org.apache.cordova.CameraLauncher" />
+   <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+   
    <preference name="target-device" value="universal" />
    <access origin="*" />
    <!-- Icons -->
