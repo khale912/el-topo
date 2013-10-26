@@ -1,0 +1,5 @@
+Foto
+Direccion (latitud - longitud)
+si tiene licencia visible
+casa - edificio - const. comercial
+comentario opcional
