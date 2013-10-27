@@ -14,8 +14,10 @@
 			"timelineTreeOpened":"true",
 			"animationEnabled":"true"}},
 	"pref__general__FilterNonAnimatedElements":"false",
+	"rectangulo-Default Timeline_playhead_ms":"0",
 	"bola2-Default Timeline_playhead_ms":"0",
 	"expanded:images/":"true",
+	"pref__general__AutoKeyframePropertiesArmed":"false",
 	"CompZoomFactor":"100",
 	"StageZoomFactor":"43",
 	"pixelsPerMs":"0.39293994717323",
@@ -165,7 +167,7 @@
 			"animationEnabled":"true",
 			"timelineColor":"0x91c767"}},
 	"Explosion-Default Timeline_playhead_ms":"0",
-	"viewStartMs":"382.70159912109",
+	"viewStartMs":"-12.724578857422",
 	"symbol_Explosion":{
 		"element_${_cohete}":{
 			"timelineColor2":"0x4fa275",
@@ -331,15 +333,13 @@
 			"timelineColor":"0xceaef4",
 			"timelineTreeOpened":"false",
 			"animationEnabled":"false"}},
-	"TransitionIdCounter":"2276",
+	"TransitionIdCounter":"2368",
 	"symbol_Down-level":{
 		"defaultStageParentWidth":"540px",
 		"defaultStageParentHeight":"776px",
 		"dummyStageParentWidth":"540px",
 		"dummyStageParentHeight":"776px"},
-	"viewStartY":"48",
-	"rectangulo-Default Timeline_playhead_ms":"0",
-	"pref__general__AutoKeyframePropertiesArmed":"false",
+	"viewStartY":"0",
 	"llamas-Default Timeline_playhead_ms":"0",
 	"usedBOM":"false",
 	"symbol_bola2":{
