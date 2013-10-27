@@ -36,31 +36,51 @@ var Composition = Edge.Composition, Symbol = Edge.Symbol; // aliases for commonl
       //Edge binding end
 
       Symbol.bindElementAction(compId, symbolName, "${_Click}", "click", function(sym, e) {
-         var r = rand(2,2);
+         var r = rand(2, 2);
          console.log(r);
          
-         if(clicks < 10){
-         	clicks++;
-         	switch(r){
-         	case 0:
-         	$(".Stage_bomba_id").css({top: e.pageY, left: e.pageX});
-         	 sym.getSymbol("bomba").play(); break;
-         	case 1: 
-         	$(".Stage_bomba2_id").css({top: e.pageY - 600, left: e.pageX - 600});
-         	sym.getSymbol("bomba2").play(); break;
-         	case 2: 
-         	$(".Stage_Rocket_id").css({top: e.pageY -10, left: e.pageX - 100});
-         	sym.getSymbol("Rocket").play(); break;
+         if (clicks < 10) {
+             clicks++;
+             switch (r) {
+                 case 0:
+                     $(".Stage_bomba_id").css({
+                         top: e.pageY,
+                         left: e.pageX
+                     });
+                     sym.getSymbol("bomba").play();
+                     break;
+                 case 1:
+                     $(".Stage_bomba2_id").css({
+                         top: e.pageY - 600,
+                         left: e.pageX - 600
+                     });
+                     sym.getSymbol("bomba2").play();
+                     break;
+                 case 2:
+                     $(".Stage_Rocket_id").css({
+                         top: e.pageY - 10,
+                         left: e.pageX - 100
+                     });
+                     sym.getSymbol("Rocket").play();
+                     break;
+             }
+         
+             function rand(min, max) {
+                 return Math.floor(Math.random() * (max - min + 1) + min);
+             }
+         } else if(clicks == 10){
+             /*sym.getSymbol("coco").play();*/
+             console.log("Llegamos a 10!");
+             sym.play("humo");
+             clicks ++;
+         } else{
+         	console.log("LTROLL");
          }
-         function rand(min, max) {
-         	return Math.floor(Math.random() * (max - min + 1) + min);
-         }
-         }else{
-         	/*sym.getSymbol("coco").play();*/
-         	console.log("Llegamos a 10!");
-         	sym.play("humo");
-         	}
          console.log("click " + clicks);
+         
+         
+         
+         
 
       });
       //Edge binding end
