@@ -7,6 +7,7 @@ var imageData = 'no_image'
 var urlForm = 'http://www.aktio.co/eltopo/register.php'
 
   function takePhoto() {
+	  onCameraSuccess("images/test.jpeg")
     navigator.camera.getPicture(onCameraSuccess, onCameraError, {
       quality: 10,
       destinationType: Camera.DestinationType.FILE_URI

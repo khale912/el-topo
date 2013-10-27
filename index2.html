@@ -1,0 +1,316 @@
+<!DOCTYPE html> 
+<html>
+<head>
+<meta charset="utf-8">
+<title>Aplic. Web de jQuery Mobile</title>
+<link href="jquery.mobile-1.0.min.css" rel="stylesheet" type="text/css"/>
+<script src="jquery-1.6.4.min.js" type="text/javascript"></script>
+<script src="jquery.mobile-1.0.min.js" type="text/javascript"></script>
+</head> 
+
+</head>
+ 
+ <!-- Scripts Mapas -->
+<script type="text/javascript" src="//maps.googleapis.com/maps/api/js?sensor=false&libraries=places"></script>
+          <script type="text/javascript">
+          var map, places, iw;
+          var markers = [];
+          var autocomplete;
+
+          function initialize() {
+            var myLatlng = new google.maps.LatLng (4.6017311, -74.1002534); //(37.783259, -122.402708) 4.5917311, -74.1002534)
+            var myOptions = {
+              zoom: 16,
+              center: myLatlng,
+              mapTypeId: google.maps.MapTypeId.ROADMAP 
+            };
+						
+            map = new google.maps.Map(document.getElementById('map_canvas'), myOptions);
+            places = new google.maps.places.PlacesService(map);
+            google.maps.event.addListener(map, 'tilesloaded', tilesLoaded);
+            autocomplete = new google.maps.places.Autocomplete(document.getElementById('autocomplete'));
+            google.maps.event.addListener(autocomplete, 'place_changed', function() {
+              showSelectedPlace();
+			  
+            });
+          }
+		  
+		  function pedirPosicion(pos) {
+   var centro = new google.maps.LatLng(pos.coords.latitude,pos.coords.longitude);
+   map.setCenter(centro); //pedimos que centre el mapa..
+   map.setMapTypeId(google.maps.MapTypeId.ROADMAP);
+   var coorMarcador = new google.maps.LatLng(pos.coords.latitude,pos.coords.longitude); /Un nuevo punto con nuestras coordenadas para el marcador (flecha) */
+                
+            var marcador = new google.maps.Marker({
+  position: new google.maps.LatLng(pos.coords.latitude,pos.coords.longitude),
+  map: map,
+  title: 'Aqui estoy',
+  icon: 'http://google-maps-icons.googlecode.com/files/administration.png',
+  
+  
+});
+
+   
+   
+    //y lo volvemos un mapa callejero
+  alert("¡Hola! Estas en : "+pos.coords.latitude+ ","+pos.coords.longitude+" Rango de localización de +/- "+pos.coords.accuracy+" metros");
+  
+  
+  /*var infowindow = new google.maps.InfoWindow({
+        map: map,
+        position: pos,
+        content: 'Location found using HTML5.'
+      });*/
+  
+
+
+  /*var market = new google.Marker ({
+				position: myLatLng,
+				map: map,
+				title: "hola"
+				
+				
+				});*/
+  
+}
+
+ 
+function geolocalizame(){
+navigator.geolocation.getCurrentPosition(pedirPosicion);
+ }
+
+          function tilesLoaded() {
+            google.maps.event.clearListeners(map, 'tilesloaded');
+            google.maps.event.addListener(map, 'zoom_changed', search);
+            google.maps.event.addListener(map, 'dragend', search);
+            search();
+          }
+
+          function showSelectedPlace() {
+            clearResults();
+            clearMarkers();
+            var place = autocomplete.getPlace();
+            map.panTo(place.geometry.location);
+            markers[0] = new google.maps.Marker({
+              position: place.geometry.location,
+              map: map
+            });
+            iw = new google.maps.InfoWindow({
+              content: getIWContent(place)
+            });
+            iw.open(map, markers[0]);
+          }
+
+          function search() {
+            var type;
+            for (var i = 0; i < document.controls.type.length; i++) {
+              if (document.controls.type[i].checked) {
+                type = document.controls.type[i].value;
+              }
+            }
+
+            autocomplete.setBounds(map.getBounds());
+
+            var search = {
+              bounds: map.getBounds()
+            };
+
+            if (type != 'establishment') {
+              search.types = [type];
+            }
+
+            places.search(search, function(results, status) {
+              if (status == google.maps.places.PlacesServiceStatus.OK) {
+                clearResults();
+                clearMarkers();
+                for (var i = 0; i < results.length; i++) {
+                  markers[i] = new google.maps.Marker({
+                    position: results[i].geometry.location,
+                    animation: google.maps.Animation.DROP
+                  });
+                  google.maps.event.addListener(markers[i], 'click', getDetails(results[i], i));
+                  setTimeout(dropMarker(i), i * 100);
+                  addResult(results[i], i);
+                }
+              }
+            });
+          }
+
+          function clearMarkers() {
+            for (var i = 0; i < markers.length; i++) {
+              if (markers[i]) {
+                markers[i].setMap(null);
+                markers[i] == null;
+              }
+            }
+          }
+
+          function dropMarker(i) {
+            return function() {
+              markers[i].setMap(map);
+            }
+          }
+
+          function addResult(result, i) {
+            var results = document.getElementById('results');
+            var tr = document.createElement('tr');
+            tr.style.backgroundColor = (i% 2 == 0 ? '#F0F0F0' : '#FFFFFF');
+            tr.onclick = function() {
+              google.maps.event.trigger(markers[i], 'click');
+            };
+
+            var iconTd = document.createElement('td');
+            var nameTd = document.createElement('td');
+            var icon = document.createElement('img');
+            icon.src = result.icon.replace('http:', '');
+            icon.setAttribute('class', 'placeIcon');
+            var name = document.createTextNode(result.name);
+            iconTd.appendChild(icon);
+            nameTd.appendChild(name);
+            tr.appendChild(iconTd);
+            tr.appendChild(nameTd);
+            results.appendChild(tr);
+          }
+
+          function clearResults() {
+            var results = document.getElementById('results');
+            while (results.childNodes[0]) {
+              results.removeChild(results.childNodes[0]);
+            }
+          }
+
+          function getDetails(result, i) {
+            return function() {
+              places.getDetails({
+                reference: result.reference
+              }, showInfoWindow(i));
+            }
+          }
+
+          function showInfoWindow(i) {
+            return function(place, status) {
+              if (iw) {
+                iw.close();
+                iw = null;
+              }
+
+              if (status == google.maps.places.PlacesServiceStatus.OK) {
+                iw = new google.maps.InfoWindow({
+                  content: getIWContent(place)
+                });
+                iw.open(map, markers[i]);
+              }
+            }
+          }
+
+          function getIWContent(place) {
+            var content = '<table style="border:0"><tr><td style="border:0;">';
+            content += '<img class="placeIcon" src="' + place.icon + '"></td>';
+            content += '<td style="border:0;"><b><a href="' + place.url + '" target="_blank">' + place.name + '</a></b></br><b><a href="#" style="font-size:10px" target="_blank">¿como llegar?</a></b>';
+			content += '</td></br>';
+			
+            content += '</td></tr></table>';
+            return content;
+          }
+		  
+		  
+		 
+
+          google.maps.event.addDomListener(window, 'load', initialize);
+	
+          </script>
+
+          <style type="text/css">
+        
+
+            
+
+            #listing {
+              float: left;
+              margin-left: 1px;
+              width: 203px;
+              height: 40%;
+              overflow:scroll;
+              cursor: pointer;
+			  position: absolute;
+			  font-family: arial;
+              font-size: 13px;
+			  
+            }
+ 
+            .placeIcon {
+              width: 16px;
+              height: 16px;
+              margin: 2px;
+            }
+            #results {
+              border-collapse: collapse;
+              width: 184px;
+
+            }
+         
+            #autocomplete {
+              width: 350px;
+		
+            
+            }
+          </style>
+          
+<!--  Fin Scripts Mapas --> 
+<body> 
+
+<div data-role="page" id="page">
+	<div data-role="header">
+		<h1>Página uno</h1>
+	</div>
+	<div data-role="content">	
+		<ul data-role="listview">
+			<li><a href="#page2">Página dos</a></li>
+            <li><a href="#page3">Página tres</a></li>
+			<li><a href="#page4">Página cuatro</a></li>
+		</ul>		
+	</div>
+    <div id="map_canvas"></div>
+	<div data-role="footer">
+		<h4>Pie de página</h4>
+	</div>
+</div>
+
+<div data-role="page" id="page2">
+	<div data-role="header">
+		<h1>Página dos</h1>
+	</div>
+	<div data-role="content">	
+		Contenido		
+	</div>
+	<div data-role="footer">
+		<h4>Pie de página</h4>
+	</div>
+</div>
+
+<div data-role="page" id="page3">
+	<div data-role="header">
+		<h1>Página tres</h1>
+	</div>
+	<div data-role="content">	
+		Contenido		
+	</div>
+	<div data-role="footer">
+		<h4>Pie de página</h4>
+	</div>
+</div>
+
+<div data-role="page" id="page4">
+	<div data-role="header">
+		<h1>Página cuatro</h1>
+	</div>
+	<div data-role="content">	
+		Contenido		
+	</div>
+	<div data-role="footer">
+		<h4>Pie de página</h4>
+	</div>
+</div>
+
+</body>
+</html>
