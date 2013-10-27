@@ -59,4 +59,4 @@ dlContent={
    dom: [
 ]};//simpleContent
 
-})( "EDGE-8621381");
+})( "mi_comp");

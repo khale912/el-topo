@@ -13,14 +13,42 @@ var Composition = Edge.Composition, Symbol = Edge.Symbol; // aliases for commonl
    (function(symbolName) {
       
       
-      Symbol.bindElementAction(compId, symbolName, "${_Rectangle}", "click", function(sym, e) {
-         sym.play("bomba");
+      
+
+      Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 0, function(sym, e) {
+         // sym.$("name") resolves an Edge Animate element name to a DOM
+         // element that can be used with jQuery
+         var element = sym.$("rectangulo");
+         console.log(element[0]);
+         element[0].style.backgroundImage="url('http://www.aspiag.com/imperia/md/images/aspiag_com/aspiag_premium_hr_375x529.jpg')";
+         sym.stop();
+         
+         clicks = 0;
 
       });
       //Edge binding end
 
-      Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 0, function(sym, e) {
-         sym.stop();
+      Symbol.bindElementAction(compId, symbolName, "${_rectangulo}", "click", function(sym, e) {
+         var r = rand(0,1);
+         console.log(r);
+         
+         if(clicks < 10){
+         	clicks++;
+         	switch(r){
+         	case 0:
+         	$(".Stage_bomba_id").css({top: e.pageY - 200, left: e.pageX - 200});
+         	 sym.getSymbol("bomba").play(); break;
+         	case 1: 
+         	$(".Stage_bomba2_id").css({top: e.pageY - 600, left: e.pageX - 600});
+         	sym.getSymbol("bomba2").play(); break;
+         }
+         function rand(min, max) {
+         	return Math.floor(Math.random() * (max - min + 1) + min);
+         }
+         }else{
+         	sym.getSymbol("coco").play();
+         	}
+         console.log("click " + clicks);
 
       });
       //Edge binding end
@@ -28,4 +56,48 @@ var Composition = Edge.Composition, Symbol = Edge.Symbol; // aliases for commonl
    })("stage");
    //Edge symbol end:'stage'
 
-})(jQuery, AdobeEdge, "EDGE-8621381");
+   //=========================================================
+   
+   //Edge symbol: 'rectangulo'
+   (function(symbolName) {   
+   
+   })("rectangulo");
+   //Edge symbol end:'rectangulo'
+
+   //=========================================================
+   
+   //Edge symbol: 'bomba'
+   (function(symbolName) {   
+   
+      Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 0, function(sym, e) {
+         sym.stop();
+
+      });
+      //Edge binding end
+
+   })("bomba");
+   //Edge symbol end:'bomba'
+
+   //=========================================================
+   
+   //Edge symbol: 'bola2'
+   (function(symbolName) {   
+   
+      Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 0, function(sym, e) {
+         sym.stop();
+
+      });
+      //Edge binding end
+
+   })("bola2");
+   //Edge symbol end:'bola2'
+
+   //=========================================================
+   
+   //Edge symbol: 'coco'
+   (function(symbolName) {   
+   
+   })("coco");
+   //Edge symbol end:'coco'
+
+})(jQuery, AdobeEdge, "mi_comp");
