@@ -1,6 +1,8 @@
 var map;
 var marker;
 
+var myPosition;
+
 function initialize() {
   var mapOptions = {
     zoom: 15,
@@ -24,8 +26,7 @@ function initialize() {
         content: 'Te encuentras aquí'
         
       });
-      var pos2send = {"latitude":position.coords.latitude, "longitude":position.coords.longitude};
-      /*console.log(pos2send)*/
+      myPosition = {"latitude":position.coords.latitude, "longitude":position.coords.longitude};
       
       marker = new google.maps.Marker({
         map:map,

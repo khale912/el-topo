@@ -23,6 +23,7 @@
   }
   </style>
   <script type="text/javascript" charset="utf-8" src="js/camara.js"></script>
+  <script type="text/javascript" charset="utf-8" src="js/form.js"></script>
 
 </head>
 
@@ -54,20 +55,19 @@
       <div>
         <img id="image" src="" width="100%" />
         <canvas id="canvas" style="display:none"></canvas>
+        <div id="btnGoToForm"></div>
       </div>
     </div>
   </div>
 
   <!-- Pagina foto -->
-  <div data-role="page" id="picture">
+  <div data-role="page" id="form">
     <div data-role="header">
       <h1>El topo</h1>
     </div>
 
     <div data-role="content">
       <p>
-        <input id="latitude" type="text" placeholder="latitud" />
-        <input id="longitude" type="text" placeholder="longitud" />
         <input type="checkbox" name="license" id="license" class="custom" />
         <label for="license">Tiene licencia visible?</label>
         <div data-role="fieldcontain">
@@ -81,8 +81,8 @@
             <label for="mallType">Centro comercial</label>
           </fieldset>
         </div>
-        <textarea id="comment" placeholder="comentarios adicionales"></textarea>
-        <a id="photoBtn" data-role="button" onclick="sendInfo()">Enviar</a>
+        <textarea id="comment" placeholder="Comentarios adicionales?"></textarea>
+        <a id="photoBtn" data-role="button" onclick="sendInfo()">Tumbarlo ahora!</a>
       </p>
     </div>
   </div>
