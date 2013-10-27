@@ -4,8 +4,8 @@
         id        = "com.angelhack.topo"
         version   = "1.0.0">
 		
-   <name>Cámara Ejemplo</name>
-   <description>Cámara en local para pasar a un server</description>
+   <name>El Topo</name>
+   <description>Aplicación para hacer reportes de construciones ilegales en la ciudad de Bogotà</description>
    <feature name="http://api.phonegap.com/1.0/network"/>
    <feature name="http://api.phonegap.com/1.0/media"/>
    <feature name="http://api.phonegap.com/1.0/file"/>
