@@ -1,8 +1,8 @@
 {
 
-	"HTMLFileName":"animacion_beta.html",
-	"PosterCapturePos":"1160",
+	"PubChromeFrameInstallerPrompt":"none",
 	"PubUseChromeFrameInstaller":"false",
+	"UseCDN":"false",
 	"ModelData":"{\
 \"stage\": {\
    \"timelines\": {\
@@ -21,13 +21,13 @@
 }",
 	"PubDPSName":"animacion",
 	"PosterImagePath":"images/Poster.png",
-	"viewStartY":"0",
 	"PubDPSDir":"/Users/rubenavilah/Documents/el-topo/",
-	"Down-level-Default Timeline_playhead_ms":"0",
-	"PubWeb":"false",
-	"PubChromeFrameInstallerPrompt":"none",
+	"viewStartY":"0",
+	"pref__general__FilterNonAnimatedElements":"false",
+	"PubWebDir":"/Users/rubenavilah/Documents/el-topo/animacion_prueba2/",
+	"HTMLFileName":"animacion_beta.html",
 	"pref__general__AutoKeyframePropertiesArmed":"false",
-	"PubDPS":"true",
+	"PosterCapturePos":"1160",
 	"symbol_stage":{
 		"dummyStageParentWidth":"540px",
 		"defaultStageParentHeight":"960px",
@@ -54,16 +54,16 @@
 			"timelineColor":"0x91c767"},
 		"defaultStageParentWidth":"540px"},
 	"TransitionIdCounter":"17",
+	"CompZoomFactor":"100",
+	"StageZoomFactor":"29",
+	"pixelsPerMs":"0.2",
+	"stage-Default Timeline_mark_ms":"-1",
+	"nextElementColorIndex":"5",
+	"stage-Default Timeline_playhead_ms":"1160",
+	"Down-level-Default Timeline_playhead_ms":"0",
 	"symbol_Down-level":{
 		"defaultStageParentWidth":"540px",
 		"defaultStageParentHeight":"776px",
 		"dummyStageParentWidth":"540px",
 		"dummyStageParentHeight":"776px"},
-	"StageZoomFactor":"29",
-	"pixelsPerMs":"0.2",
-	"usedBOM":"false",
-	"nextElementColorIndex":"5",
-	"stage-Default Timeline_playhead_ms":"1160",
-	"CompZoomFactor":"100",
-	"stage-Default Timeline_mark_ms":"-1",
-	"pref__general__FilterNonAnimatedElements":"false"}
+	"usedBOM":"false"}
