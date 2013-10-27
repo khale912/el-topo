@@ -5,7 +5,7 @@
 	"pref__general__AutoKeyframeProperties":"true",
 	"UseCDN":"false",
 	"PubDPSName":"animacion",
-	"PosterImagePath":"images/Poster.png",
+	"PosterImagePath":"logo-el-topo.png",
 	"symbol_bomba":{
 		"element_${_Ellipse2}":{
 			"timelineColor2":"0x1aa38f",
@@ -13,24 +13,24 @@
 			"timelineColor":"0x00bda4",
 			"timelineTreeOpened":"true",
 			"animationEnabled":"true"}},
-	"Down-level-Default Timeline_playhead_ms":"0",
+	"pref__general__FilterNonAnimatedElements":"false",
 	"bola2-Default Timeline_playhead_ms":"0",
 	"expanded:images/":"true",
 	"CompZoomFactor":"100",
 	"StageZoomFactor":"43",
-	"coco-Default Timeline_playhead_ms":"0",
+	"pixelsPerMs":"0.39293994717323",
+	"llama-Default Timeline_playhead_ms":"42",
+	"stage-Default Timeline_mark_ms":"-1",
+	"nextElementColorIndex":"13",
 	"pref__general__GenerateSmoothTransitions":"true",
-	"symbol_llama":{},
-	"nextElementColorIndex":"11",
-	"stage-Default Timeline_playhead_ms":"1672",
 	"symbol_coco":{
 		"element_${_Ellipse2}":{
 			"timelineColor2":"0xd35d6e",
 			"timelineColor3":"0x7e4b52",
 			"animationEnabled":"true",
 			"timelineColor":"0xfb657a"}},
-	"rectangulo-Default Timeline_playhead_ms":"0",
-	"bomba-Default Timeline_playhead_ms":"0",
+	"symbol_llama":{},
+	"coco-Default Timeline_playhead_ms":"0",
 	"HTMLFileName":"animacion_beta.html",
 	"symbol_misil":{
 		"element_${_llamas}":{
@@ -38,18 +38,19 @@
 			"timelineColor3":"0x295a6d",
 			"animationEnabled":"true",
 			"timelineColor":"0x008dc8"},
-		"element_${_cohete2}":{
-			"timelineColor2":"0x326a96",
-			"timelineColor3":"0x385063",
-			"timelineColor":"0x2f73ad"},
 		"element_${_llama}":{
 			"timelineColor2":"0x1095d2",
 			"timelineColor3":"0x29647e",
 			"animationEnabled":"false",
-			"timelineColor":"0x00a9fa"}},
-	"Rocket-Default Timeline_playhead_ms":"0",
+			"timelineColor":"0x00a9fa"},
+		"element_${_cohete2}":{
+			"timelineColor2":"0x326a96",
+			"timelineColor3":"0x385063",
+			"timelineColor":"0x2f73ad"}},
+	"rocket-Default Timeline_playhead_ms":"0",
 	"PubUseChromeFrameInstaller":"false",
-	"PubWebDir":"/Users/rubenavilah/Documents/el-topo/animacion_prueba2/",
+	"misil-Default Timeline_playhead_ms":"0",
+	"symbol_Rocker":{},
 	"ModelData":"{\
 \"stage\": {\
    \"timelines\": {\
@@ -75,19 +76,14 @@
 \
    }}\
 }",
-	"misil-Default Timeline_playhead_ms":"0",
 	"symbol_rectangulo":{
 		"element_${_Rectangle3}":{
 			"timelineColor2":"0x326a96",
 			"timelineColor3":"0x385063",
 			"timelineColor":"0x2f73ad"}},
-	"symbol_Rocker":{},
+	"symbol_llamas":{},
 	"symbol_Rocket":{
-		"element_${_Explosion}":{
-			"timelineColor2":"0xcbbd71",
-			"timelineColor3":"0x7b7652",
-			"animationEnabled":"true",
-			"timelineColor":"0xeedf79"},
+		"dummyStageParentWidth":"540px",
 		"element_${_polvo}":{
 			"timelineColor2":"0x168c84",
 			"timelineColor3":"0x2a605c",
@@ -143,30 +139,25 @@
 			"animationEnabled":"false"},
 		"defaultStageParentHeight":"776px",
 		"defaultStageParentWidth":"540px",
-		"element_${_llamas2}":{
-			"timelineColor2":"0xd8b467",
-			"timelineColor3":"0x81714f",
+		"element_${_Explosion}":{
+			"timelineColor2":"0xcbbd71",
+			"timelineColor3":"0x7b7652",
 			"animationEnabled":"true",
-			"timelineColor":"0xffd46d"},
+			"timelineColor":"0xeedf79"},
 		"element_${_llama2Copy}":{
 			"timelineColor2":"0x81aa62",
 			"timelineColor3":"0x5b6c4d",
 			"animationEnabled":"false",
 			"timelineColor":"0x91c767"},
-		"dummyStageParentWidth":"540px"},
-	"pref__general__FilterNonAnimatedElements":"false",
-	"symbol_rocket":{
-		"element_${_rocket}":{
-			"timelineColor2":"0x1095d2",
-			"invisible":"false",
-			"timelineColor3":"0x29647e",
-			"timelineColor":"0x00a9fa",
-			"locked":"false",
+		"element_${_llamas2}":{
+			"timelineColor2":"0xd8b467",
+			"timelineColor3":"0x81714f",
 			"animationEnabled":"true",
-			"usingMotionPaths":"false",
-			"timelineTreeOpened":"true"}},
-	"symbol_llamas":{},
-	"PubDPSDir":"/Users/rubenavilah/Documents/el-topo/",
+			"timelineColor":"0xffd46d"}},
+	"PosterCapturePos":"1160",
+	"Rocket2-Default Timeline_playhead_ms":"0",
+	"bomba-Default Timeline_playhead_ms":"0",
+	"PubDPSDir":"/Users/rubenavilah/Documents/el-topo/animacion/",
 	"symbol_Rocket2":{
 		"element_${_Rocket2}":{
 			"timelineColor2":"0x81aa62",
@@ -174,21 +165,40 @@
 			"animationEnabled":"true",
 			"timelineColor":"0x91c767"}},
 	"Explosion-Default Timeline_playhead_ms":"0",
-	"viewStartMs":"305.39017695519",
+	"viewStartMs":"382.70159912109",
 	"symbol_Explosion":{
 		"element_${_cohete}":{
 			"timelineColor2":"0x4fa275",
 			"timelineColor3":"0x456a55",
 			"timelineColor":"0x50bd82"}},
-	"Rocket2-Default Timeline_playhead_ms":"0",
+	"symbol_rocket":{
+		"element_${_rocket}":{
+			"timelineColor2":"0x1095d2",
+			"invisible":"false",
+			"locked":"false",
+			"timelineColor":"0x00a9fa",
+			"timelineTreeOpened":"true",
+			"animationEnabled":"true",
+			"usingMotionPaths":"false",
+			"timelineColor3":"0x29647e"}},
 	"symbol_stage":{
 		"dummyStageParentWidth":"540px",
-		"dummyStageParentHeight":"776px",
-		"element_${_rocket3}":{
-			"timelineColor2":"0xba5b89",
-			"timelineColor3":"0x734a5f",
+		"element_${_Ellipse}":{
+			"timelineColor2":"0xd8b467",
+			"timelineColor3":"0x81714f",
 			"animationEnabled":"false",
-			"timelineColor":"0xdb619d"},
+			"timelineColor":"0xffd46d"},
+		"element_${_Rocket23}":{
+			"timelineColor2":"0x326a96",
+			"timelineColor3":"0x385063",
+			"animationEnabled":"false",
+			"timelineColor":"0x2f73ad"},
+		"element_${_Stage}":{
+			"timelineColor2":"0xcbbd71",
+			"timelineColor3":"0x7b7652",
+			"timelineColor":"0xeedf79",
+			"timelineTreeOpened":"false",
+			"invisible":"false"},
 		"element_${_coco}":{
 			"timelineColor2":"0x1aa38f",
 			"timelineColor3":"0x2a6a61",
@@ -196,50 +206,62 @@
 			"timelineTreeOpened":"false",
 			"animationEnabled":"false",
 			"invisible":"true"},
-		"element_${_rectangulo}":{
+		"element_${_humo}":{
 			"timelineColor2":"0x107faa",
 			"timelineColor3":"0x295a6d",
-			"timelineColor":"0x008dc8",
-			"timelineTreeOpened":"false",
-			"animationEnabled":"true"},
-		"element_${_Rocket23}":{
-			"timelineColor2":"0x326a96",
-			"timelineColor3":"0x385063",
 			"animationEnabled":"false",
-			"timelineColor":"0x2f73ad"},
-		"defaultStageParentWidth":"540px",
-		"element_${_Ellipse}":{
-			"timelineColor2":"0xd8b467",
-			"timelineColor3":"0x81714f",
+			"timelineColor":"0x008dc8"},
+		"element_${_Rocket2}":{
+			"timelineColor2":"0xd35d6e",
+			"timelineColor3":"0x7e4b52",
 			"animationEnabled":"false",
-			"timelineColor":"0xffd46d"},
-		"element_${_bomba}":{
-			"timelineColor2":"0xb099ce",
-			"timelineColor3":"0x70657c",
-			"timelineColor":"0xceaef4",
-			"timelineTreeOpened":"false",
-			"animationEnabled":"false"},
-		"defaultStageParentHeight":"776px",
-		"element_${_rectangulo2}":{
-			"timelineColor2":"0xcbbd71",
-			"timelineColor3":"0x7b7652",
-			"animationEnabled":"true",
-			"timelineColor":"0xeedf79"},
+			"timelineColor":"0xfb657a"},
 		"element_${_fondo}":{
 			"timelineColor2":"0x326a96",
 			"timelineColor3":"0x385063",
 			"timelineColor":"0x2f73ad"},
+		"element_${_logo-el-topo}":{
+			"timelineColor2":"0xba5b89",
+			"timelineColor3":"0x734a5f",
+			"timelineColor":"0xdb619d",
+			"timelineTreeOpened":"true",
+			"animationEnabled":"true"},
+		"element_${_compartir}":{
+			"timelineColor2":"0xb099ce",
+			"timelineColor3":"0x70657c",
+			"timelineColor":"0xceaef4",
+			"timelineTreeOpened":"false",
+			"animationEnabled":"true"},
+		"element_${_rocket3}":{
+			"timelineColor2":"0xba5b89",
+			"timelineColor3":"0x734a5f",
+			"animationEnabled":"false",
+			"timelineColor":"0xdb619d"},
+		"element_${_Group}":{
+			"timelineColor2":"0x1095d2",
+			"timelineColor3":"0x29647e",
+			"timelineColor":"0x00a9fa"},
+		"element_${_rocket4}":{
+			"timelineColor2":"0xd8b467",
+			"timelineColor3":"0x81714f",
+			"animationEnabled":"false",
+			"timelineColor":"0xffd46d"},
+		"element_${_Rectangle3}":{
+			"timelineColor2":"0x5a558a",
+			"timelineColor3":"0x4a485e",
+			"animationEnabled":"false",
+			"timelineColor":"0x63599f"},
 		"element_${_Click}":{
 			"timelineColor2":"0x81aa62",
 			"timelineColor3":"0x5b6c4d",
 			"timelineColor":"0x91c767",
-			"timelineTreeOpened":"false",
+			"timelineTreeOpened":"true",
 			"animationEnabled":"true"},
-		"element_${_humo2}":{
-			"timelineColor2":"0x5a558a",
-			"timelineColor3":"0x4a485e",
-			"animationEnabled":"true",
-			"timelineColor":"0x63599f"},
+		"element_${_logo_el_topo}":{
+			"timelineColor2":"0xd35d6e",
+			"timelineColor3":"0x7e4b52",
+			"animationEnabled":"false",
+			"timelineColor":"0xfb657a"},
 		"element_${_Rectangle2}":{
 			"timelineColor2":"0x168c84",
 			"timelineColor3":"0x2a605c",
@@ -283,49 +305,40 @@
 			"timelineTreeOpened":"false",
 			"animationEnabled":"true",
 			"usingMotionPaths":"false"},
-		"element_${_rocket4}":{
-			"timelineColor2":"0xd8b467",
-			"timelineColor3":"0x81714f",
-			"animationEnabled":"false",
-			"timelineColor":"0xffd46d"},
-		"element_${_Group}":{
-			"timelineColor2":"0x1095d2",
-			"timelineColor3":"0x29647e",
-			"timelineColor":"0x00a9fa"},
-		"element_${_humo}":{
-			"timelineColor2":"0x107faa",
-			"timelineColor3":"0x295a6d",
-			"animationEnabled":"false",
-			"timelineColor":"0x008dc8"},
-		"element_${_Rocket2}":{
-			"timelineColor2":"0xd35d6e",
-			"timelineColor3":"0x7e4b52",
-			"animationEnabled":"false",
-			"timelineColor":"0xfb657a"},
-		"element_${_Rectangle3}":{
-			"timelineColor2":"0x5a558a",
-			"timelineColor3":"0x4a485e",
-			"animationEnabled":"false",
-			"timelineColor":"0x63599f"},
-		"element_${_Stage}":{
+		"defaultStageParentHeight":"776px",
+		"element_${_rectangulo2}":{
 			"timelineColor2":"0xcbbd71",
 			"timelineColor3":"0x7b7652",
-			"timelineColor":"0xeedf79",
+			"animationEnabled":"true",
+			"timelineColor":"0xeedf79"},
+		"element_${_humo2}":{
+			"timelineColor2":"0x5a558a",
+			"timelineColor3":"0x4a485e",
+			"timelineColor":"0x63599f",
 			"timelineTreeOpened":"false",
-			"invisible":"false"},
-		"element_${_compartir}":{
+			"animationEnabled":"true"},
+		"defaultStageParentWidth":"540px",
+		"dummyStageParentHeight":"776px",
+		"element_${_rectangulo}":{
+			"timelineColor2":"0x107faa",
+			"timelineColor3":"0x295a6d",
+			"timelineColor":"0x008dc8",
+			"timelineTreeOpened":"false",
+			"animationEnabled":"true"},
+		"element_${_bomba}":{
 			"timelineColor2":"0xb099ce",
 			"timelineColor3":"0x70657c",
-			"animationEnabled":"true",
-			"timelineColor":"0xceaef4"}},
-	"TransitionIdCounter":"2085",
+			"timelineColor":"0xceaef4",
+			"timelineTreeOpened":"false",
+			"animationEnabled":"false"}},
+	"TransitionIdCounter":"2276",
 	"symbol_Down-level":{
 		"defaultStageParentWidth":"540px",
 		"defaultStageParentHeight":"776px",
 		"dummyStageParentWidth":"540px",
 		"dummyStageParentHeight":"776px"},
-	"viewStartY":"0",
-	"PosterCapturePos":"1160",
+	"viewStartY":"48",
+	"rectangulo-Default Timeline_playhead_ms":"0",
 	"pref__general__AutoKeyframePropertiesArmed":"false",
 	"llamas-Default Timeline_playhead_ms":"0",
 	"usedBOM":"false",
@@ -335,7 +348,7 @@
 			"timelineColor3":"0x456a55",
 			"animationEnabled":"true",
 			"timelineColor":"0x50bd82"}},
-	"rocket-Default Timeline_playhead_ms":"0",
-	"pixelsPerMs":"0.39293994717323",
-	"stage-Default Timeline_mark_ms":"-1",
-	"llama-Default Timeline_playhead_ms":"42"}
+	"Rocket-Default Timeline_playhead_ms":"0",
+	"PubWebDir":"/Users/rubenavilah/Documents/el-topo/animacion/",
+	"Down-level-Default Timeline_playhead_ms":"0",
+	"stage-Default Timeline_playhead_ms":"1339"}
