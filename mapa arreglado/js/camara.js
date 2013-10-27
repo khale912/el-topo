@@ -1,13 +1,12 @@
 // JavaScript Document
 
-var licenseBool = false
-var type = 'no_type'
-var comment = 'no_comment'
-var imageData = 'no_image'
-var urlForm = 'http://www.aktio.co/eltopo/register.php'
-
   function takePhoto() {
+<<<<<<< HEAD
 	  onCameraSuccess("images/test.jpeg")
+=======
+    // Este es para probar en local
+    //onCameraSuccess("images/test.jpeg");
+>>>>>>> dae27b740a59fb997cdf4f920e0d53f47a20ac8f
     navigator.camera.getPicture(onCameraSuccess, onCameraError, {
       quality: 10,
       destinationType: Camera.DestinationType.FILE_URI
@@ -19,8 +18,12 @@ var urlForm = 'http://www.aktio.co/eltopo/register.php'
     ic = document.getElementById('image')
     ic.src = imageURI
 
+    var divBtnGoToForm = document.getElementById('btnGoToForm')
+    divBtnGoToForm.innerHTML =  '<a href="#form" id="goToFormBtn" data-role="button" >Lista la foto</a>'
+    $('#goToFormBtn').button().button('refresh')
+
     document.getElementById('photoBtn').value = 'Retomar foto'
-    $('#photoBtn').button('refresh')
+    $('#photoBtn').button().button('refresh')
   }
 
   function checkImgData(){
@@ -37,42 +40,4 @@ var urlForm = 'http://www.aktio.co/eltopo/register.php'
   function onCameraError(e) {
     console.log(e)
     navigator.notification.alert('onCameraError: ' + e)
-  }
-
-  function sendInfo() {
-    if ($('#license').is(':checked')) {
-      licenseBool = true
-    } else {
-      licenseBool = false
-    }
-    if ($('#homeType').is(':checked')) {
-      type = 'home'
-    } else if ($('#buildingType').is(':checked')) {
-      type = 'building'
-    } else if ($('#mallType').is(':checked')) {
-      type = 'mall'
-    } else {
-      type = 'no_type'
-    }
-
-    checkImgData()
-
-    var toSend = {
-      'image': imageData,
-      'position': {
-        'latitude': document.getElementById('latitude').value,
-        'longitude': document.getElementById('longitude').value
-      },
-      'license': licenseBool,
-      'type': type,
-      'comment': document.getElementById('comment').value
-    }
-
-    $.ajax({
-      type: 'POST',
-      url: urlForm,
-      data: toSend
-    }).done(function(msg) {
-      console.log(msg)
-    })
   }
